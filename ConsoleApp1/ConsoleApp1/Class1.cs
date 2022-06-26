@@ -84,16 +84,22 @@ namespace ConsoleApp1
 
         void buy(int amount,String symbol, List<Stock> stock,List<CompanyShares> companyShares)
         {
-            foreach(var item in companyShares)
+            foreach (var item in companyShares)
             {
                 foreach (var item1 in stock)
                 {
                     if (item.stockSymbol == symbol)
                     {
                         item1.shareprice = item1.shareprice + amount;
+                        StockSymbolLinkedList list = new StockSymbolLinkedList();
+                        list.Add(item.stockSymbol);
                     }
                 }
+
             }
+
+           
+
 
 
         }
@@ -106,7 +112,9 @@ namespace ConsoleApp1
                 if(item.stockSymbol == symbol)
                 {
                     item1.shareprice = item1.shareprice - amount;
-                }
+                        StockSymbolLinkedList list = new StockSymbolLinkedList();
+                        list.Add(item.stockSymbol);
+                    }
             }
         } 
 
